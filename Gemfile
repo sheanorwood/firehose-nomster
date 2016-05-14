@@ -5,6 +5,9 @@ source 'https://rubygems.org'
 gem 'bootstrap-sass', '~> 3.3.5.1'
 gem 'sprockets', '2.11.0'
 
+# Use Simple Form
+gem 'simple_form'
+
 ## Gemfile for Rails 3+, Sinatra, or Merb
 gem 'will_paginate', '~> 3.0.5'
 
