@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+# Use CarrierWave to upload pictures
+gem 'carrierwave'
+
 
 # Enables Environment Variable for secure key et. al storage
 gem 'figaro',   ">= 1.0.0"
