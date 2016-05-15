@@ -1,6 +1,12 @@
 source 'https://rubygems.org'
 
 
+# Enables Environment Variable for secure key et. al storage
+gem 'figaro',   ">= 1.0.0"
+
+# Added Geocoder Function
+gem 'geocoder'
+
 # Use Twitter Bootstrap 3
 gem 'bootstrap-sass', '~> 3.3.5.1'
 gem 'sprockets', '2.11.0'
