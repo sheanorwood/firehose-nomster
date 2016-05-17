@@ -3,6 +3,8 @@ source 'https://rubygems.org'
 # Use CarrierWave to upload pictures
 gem 'carrierwave'
 
+# Use Fog for Heroku Compability
+gem  "fog",  "~> 1.3.1"
 
 # Enables Environment Variable for secure key et. al storage
 gem 'figaro',   ">= 1.0.0"

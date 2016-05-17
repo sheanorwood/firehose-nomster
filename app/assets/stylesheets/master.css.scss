@@ -3,6 +3,10 @@
 
 }
 
+.container {
+  margin-top: 25px;
+
+}
 .booyah-box {
   -moz-box-shadow: 1px 1px 2px 0 #d0d0d0;
   -webkit-box-shadow: 1px 1px 2px 0 #d0d0d0;
@@ -96,7 +100,22 @@ blockquote p {
   display: inline;
 }
 
-.pull-right {
-  margin-right: 20px;
+.edit {
+  margin-right: 10px;
 
 }
+.cmt-btn  {
+  margin-right: 100px;
+}
+
+.pull-left {
+  margin-left: 20px;
+}
+
+
+.glyphicon.glyphicon-camera  {
+  font-size: 20px;
+  margin-left: 10px;
+
+}
+
