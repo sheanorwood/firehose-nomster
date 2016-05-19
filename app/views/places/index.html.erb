@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title></title>
+
+    <title>Nomster Restaurant Guide</title>
 </head>
 <body>
+
     <div class="carousel slide" data-ride="carousel" id=
     "carousel-example-generic">
         <!-- Indicators -->
@@ -43,10 +45,11 @@
             <%end %>
         </div>
         <div class="container">
-            <div class="col-md-3 col-xs-4 thumbnail">
+            <div class="col-md-3 col-xs-4 thumbnail visible-md visible-lg">
                 <%if place.photos.present? %><%= image_tag(place.photos.last.picture, :class => "img-thumbnail")%><%end %>
-            </div><%if place.comments.present? %>
-            <div class="col-xs-6">
+            </div>
+                <%if place.comments.present? %>
+            <div class="col-xs-6 visible-md visible-lg">
                 <blockquote>
                     <%if place.comments.last.humanized_rating.present? %><b><%= place.comments.last.humanized_rating %></b>
                     <%end %> <%= place.comments.last.message %>
@@ -58,5 +61,6 @@
     <div class="apple_pagination">
         <%= will_paginate @places %>
     </div>
+
 </body>
 </html>
