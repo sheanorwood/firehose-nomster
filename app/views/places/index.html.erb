@@ -1,62 +1,62 @@
-<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-  <!-- Indicators -->
-  <ol class="carousel-indicators">
-    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-  </ol>
-
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner">
-    <div class="item active">
-      <%= image_tag 'slider1.jpg' %>
-      <div class="carousel-caption">
-        Find the best places to eat in Burleson
-      </div>
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <div class="carousel slide" data-ride="carousel" id=
+    "carousel-example-generic">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li class="active" data-slide-to="0" data-target=
+            "#carousel-example-generic"></li>
+            <li data-slide-to="1" data-target="#carousel-example-generic"></li>
+        </ol><!-- Wrapper for slides -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <%= image_tag 'slider1.jpg', class:  'img-responsive' %>
+                <div class="carousel-caption">
+                    Find the best places to eat in Burleson
+                </div>
+            </div>
+            <div class="item">
+                <%= image_tag 'slider2.jpg' , class:  'img-responsive' %>
+                <div class="carousel-caption">
+                    Another great day to eat out.
+                </div>
+            </div>
+        </div><!-- Controls -->
+         <a class="left carousel-control" data-slide="prev" href=
+        "#carousel-example-generic"><span class=
+        "glyphicon glyphicon-chevron-left"></span></a> <a class=
+        "right carousel-control" data-slide="next" href=
+        "#carousel-example-generic"><span class=
+        "glyphicon glyphicon-chevron-right"></span></a>
+    </div><%@places.each do |place| %>
+    <div class="booyah-box col-xs-10 col-xs-offset-1">
+        <h1><%= link_to place.name, place_path(place) %></h1><br>
+        <em><%= place.address %></em><br>
+        <br>
+        <p><%= place.description %></p><br>
+        <div class="pull right">
+            <%if place.user.present?  %><small><%=  place.user.email  %></small>
+            <%end %>
+        </div>
+        <div class="container">
+            <div class="col-md-3 col-xs-4 thumbnail">
+                <%if place.photos.present? %><%= image_tag(place.photos.last.picture, :class => "img-thumbnail")%><%end %>
+            </div><%if place.comments.present? %>
+            <div class="col-xs-6">
+                <blockquote>
+                    <%if place.comments.last.humanized_rating.present? %><b><%= place.comments.last.humanized_rating %></b>
+                    <%end %> <%= place.comments.last.message %>
+                    <small><%= place.comments.last.user.email %></small>
+                </blockquote>
+            </div><%end %>
+        </div>
+    </div><%end %>
+    <div class="apple_pagination">
+        <%= will_paginate @places %>
     </div>
-    <div class="item">
-      <%= image_tag 'slider2.jpg' %>
-      <div class="carousel-caption">
-      Another great day to eat out.
-       </div>
-   </div>
-</div>
-
-  <!-- Controls -->
-  <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left"></span>
-  </a>
-  <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right"></span>
-  </a>
-</div>
-
-   <% @places.each do |place| %>
-  <div class="booyah-box col-xs-10 col-xs-offset-1">
-    <h1><%= link_to place.name, place_path(place) %></h1><br />
-    <em><%= place.address %></em><br /> <br />
-    <p><%= place.description %></p><br />
-
-<% if place.user.present?  %>
-    <small><%=  place.user.email  %></small>
-<% end %>
-
-<% if place.comments.present? %>
-<div class="col-xs-12">
-  <blockquote>
-    <% if place.comments.last.humanized_rating.present? %>
-      <b><%= place.comments.last.humanized_rating %></b> -
-    <% end %>
-    <%= place.comments.last.message %>
-    <small><%= place.comments.last.user.email %></small>
-  </blockquote>
-</div>
-<% end %>
-  </div>
-
-
-<% end %>
-
-
-<div class="apple_pagination">
-<%= will_paginate @places %>
-</div>
+</body>
+</html>
