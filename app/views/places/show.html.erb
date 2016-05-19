@@ -32,7 +32,8 @@
         <div class="pull-right">
             <%if current_user && current_user == @place.user %><%= link_to 'Edit', edit_place_path(@place), class:  'btn btn-primary'  %><%= link_to 'Delete', place_path(@place), method: :delete, data: {confirm: 'Are you sure you want to delete this?'},class: 'btn btn-danger' %><%end %>
         </div>
-    </div><!-- Modal for Comments -->
+    </div>
+    <!-- Modal for Comments -->
     <div aria-hidden="true" aria-labelledby="myModalLabel" class="modal fade"
     id="myModal" role="dialog" tabindex="-1">
         <div class="modal-dialog">
@@ -55,10 +56,14 @@
         </div>
     </div>
     <div class="col-xs-10">
-        <h1 class="pull-left">Comments</h1><!-- Button trigger modal -->
-         <button class="btn btn-primary btn-lg cmt-btn pull-right" data-target=
+        <h1 class="col-xs-4 col-sm-6 col-md-8">Comments</h1>
+        <!-- Button trigger modal -->
+
+         <button class="btn btn-primary btn-md pull-right cbutton" data-target=
         "#myModal" data-toggle="modal">Add a comment</button>
-    </div><!-- Modal for Picture -->
+    </div>
+ <div class="clear"></div>
+    <!-- Modal for Picture -->
     <div aria-labelledby="picModalLabel" class="modal fade" id="mypicModal"
     role="dialog" tabindex="-1">
         <div class="modal-dialog" role="document">
